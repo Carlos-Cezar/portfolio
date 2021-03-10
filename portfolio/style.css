@@ -1,0 +1,214 @@
+/*#0984e3*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.wrapper {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/background2.jpg);
+    background-size: cover;
+    display: table;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-family: "Montserrat";
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.logo {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    line-height: 10px;
+    padding: 0 6em;
+    letter-spacing: 1px;
+}
+
+.menu {
+    float: right;
+    line-height: 50px;
+    margin: 0 6em;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+}
+
+.menu ul li {
+    float: right;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.menu ul li a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-family: "Quicksand";
+    font-weight: lighter;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .2s;
+}
+
+li a:hover::after {
+    width: 100%;
+    transition: width .2s;
+}
+
+.header {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-family: inherit;
+}
+
+.header p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: "Quicksand";
+    letter-spacing: 150%;
+}
+
+menu :active {
+    width: 50%;
+}
+
+.button p {
+    background: #3498db;
+    border-radius: 3px;
+    position: relative;
+    top: 50px;
+    width: 150px;
+    padding: 10px 50px;
+    margin: 0 auto;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+.logo img{
+    width: 100px;
+    color: #fff;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: block
+}
+
+.logo img:hover{
+    transform: scale(1.3);
+    transition: 0.2s linear;
+}
+
+.icons {
+    position: absolute;
+    top: 150%;
+    transform: translatey(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    width: 90px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn i{
+    line-height: 90px;
+    font-size: 30px;
+    transition: 0.1s linear;
+}
+.btn:hover i{
+    transform: scale(1.3);
+    color: #3498db;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    color: #3498db;
+}
+
+.apresentation {
+    background: #fff;
+    width: 100%;
+    height: 400px;
+}
+
+.apresentation h1{
+    font-size: 30px;
+    letter-spacing: 150%;
+    left: 30px;
+    max-width: 70ch;
+    font-family: sans-serif;
+    position: relative;
+    padding-top: 180px;
+}
+
+.apresentation p{
+    font-size: 20px;
+    letter-spacing: 150%;
+    left: 500px;
+    max-width: 60ch;
+    font-family: sans-serif;
+    position: relative;
+    padding-top: 0px;
+}
+
+.apresentation img{
+    position: absolute;
+    left: 200px;
+    width: 220px;
+    height: 300px;
+    padding-top: 50px;
+}
