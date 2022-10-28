@@ -1,0 +1,293 @@
+:root {
+  --ff: "Montserrat", sans-serif;
+
+  --clr-100: #ffff;
+  --clr-200: hsla(0, 0%, 100%, 0.66);
+
+  --clr-700: #1e1e1e;
+  --clr-900: hsla(0, 0%, 6%, 1);
+  --clr-bg: hsla(0, 0%, 7%, 1);
+  --clr-secondary-bg: hsla(0, 0%, 9%, 1);
+  --fw-italic: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS Reset above */
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+}
+
+body {
+  font-family: var(--ff);
+  font-weight: var(--fw-regular);
+  background-color: var(--clr-bg);
+  color: var(--clr-100);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--clr-100);
+}
+
+p {
+  color: var(--clr-200);
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  background-color: var(--clr-900);
+  align-items: center;
+  padding: 1rem 1.4rem;
+  z-index: 9999;
+}
+
+.navbar a {
+  font-weight: var(--fw-semi-bold);
+}
+
+.navbar__logo {
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  z-index: 9999;
+}
+
+.navbar__btns {
+  display: none;
+}
+
+.navbar__dd--btn {
+  text-decoration: none;
+}
+
+.navbar__drop-down img {
+  aspect-ratio: 1/1;
+  height: 30px;
+}
+
+.navbar__drop-down--toggle img {
+  z-index: 9999;
+}
+
+.navbar__drop-down--menu {
+  position: fixed;
+  background-color: hsl(0 0% 0% / 0.9);
+  z-index: 1000;
+  inset: 0;
+  backdrop-filter: blur(0.2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateY(-100%);
+  transition: transform 400ms ease-in-out;
+}
+
+.navbar__drop-down--menu[data-visible="true"] {
+  transform: translateY(0%);
+}
+
+.navbar__drop-down--menu a {
+  font-size: 1.5rem;
+  transform: translateY(-20vh);
+}
+
+/* Hero */
+
+.hero {
+  height: 100vh;
+  background-image: url(images/hero-image.png);
+  background-size: cover;
+  background-position-x: 30%;
+  background-position-y: 1rem;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero__text {
+  /* position: relative; */
+  transform: translateY(-50%);
+}
+
+.hero__text p {
+  font-size: 1.4rem;
+  max-width: 20ch;
+}
+
+.hero__btn {
+  position: absolute;
+  bottom: 2.5rem;
+  aspect-ratio: 1/1;
+  height: 1.5rem;
+}
+
+/* Projects */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.projects__scroller {
+  overflow: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  overscroll-behavior-inline: contain;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.projects__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.projects__scroller--card {
+  background-color: var(--clr-secondary-bg);
+  padding: 2rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  max-height: 70vh;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.projects__scroller--card img {
+}
+
+/* Footer */
+
+footer {
+  padding: 2rem;
+  background-color: var(--clr-900);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  height: 9rem;
+}
+
+footer p {
+  font-style: italic;
+  min-width: 28ch;
+}
+
+.footer__contacts {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar__drop-down {
+    display: none;
+  }
+
+  .navbar__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
